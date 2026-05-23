@@ -44,7 +44,7 @@ public class CommandSpyListener implements Listener {
 
         if (mode == HiddenModes.PERMISSION && player.hasPermission("commandspyplus.event.hide")) return;
 
-        if (mode == HiddenModes.PERSON && manager.getPlayerHidden(player.getName())) return;
+        if (mode == HiddenModes.PERSON && manager.getPlayerHidden(player)) return;
 
 
         List<String> ignoredCommands = plugin.getConfig().getStringList("ignored-commands");

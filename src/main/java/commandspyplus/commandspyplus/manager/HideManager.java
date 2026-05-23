@@ -8,7 +8,6 @@ import org.bukkit.entity.Player;
 
 import java.util.ArrayList;
 import java.util.List;
-import java.util.UUID;
 
 public class HideManager {
 
@@ -33,6 +32,10 @@ public class HideManager {
             return playerDataConfigByName.getBoolean("hidden");
         }
         return false;
+    }
+    public boolean getPlayerHidden(Player player) {
+        FileConfiguration playerDataConfig = PlayerData.getPlayerDataConfig(plugin, player.getUniqueId());
+        return playerDataConfig.getBoolean("hidden");
     }
     public void setPlayerHidden(String name, boolean hidden) {
         FileConfiguration playerDataConfigByName = PlayerData.getPlayerDataConfigByName(plugin, name);
